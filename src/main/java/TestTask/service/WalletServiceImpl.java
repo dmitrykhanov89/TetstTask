@@ -20,7 +20,7 @@ public class WalletServiceImpl implements WalletService {
     @Transactional
     public void processOperation(WalletOperationRequest request) {
         UUID walletId = request.getWalletId();
-        Wallet wallet = walletRepository.findById(walletId)
+        Wallet wallet = walletRepository.findByIdForUpdate(walletId)
                 .orElseThrow(() -> new WalletNotFoundException("Wallet not found"));
         switch (request.getOperationType()) {
             case DEPOSIT -> deposit(wallet, request.getAmount());
