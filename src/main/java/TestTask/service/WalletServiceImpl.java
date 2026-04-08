@@ -8,7 +8,6 @@ import TestTask.repository.WalletRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Service
@@ -21,10 +20,8 @@ public class WalletServiceImpl implements WalletService {
     @Transactional
     public void processOperation(WalletOperationRequest request) {
         UUID walletId = request.getWalletId();
-
         Wallet wallet = walletRepository.findById(walletId)
                 .orElseThrow(() -> new WalletNotFoundException("Wallet not found"));
-
         switch (request.getOperationType()) {
             case DEPOSIT -> deposit(wallet, request.getAmount());
             case WITHDRAW -> withdraw(wallet, request.getAmount());

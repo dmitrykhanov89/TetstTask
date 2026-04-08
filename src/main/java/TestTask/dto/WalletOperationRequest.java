@@ -15,11 +15,11 @@ public class WalletOperationRequest {
     @NotNull
     private UUID walletId;
 
-    @NotNull
+    @NotNull(message = "Operation type must be DEPOSIT or WITHDRAW")
     private OperationType operationType;
 
-    @Positive
-    private long amount; // сумма в минимальной единице валюты
+    @Positive(message = "Amount must be positive")
+    private long amount;
 
     public enum OperationType {
         DEPOSIT,
