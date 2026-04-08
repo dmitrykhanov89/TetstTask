@@ -1,4 +1,4 @@
-package TestTask.TestTask.dto;
+package TestTask.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
-      file: db/migration/db.changelog-1-init.yaml
+      file: db/migration/0001_init.yaml
+  - include:
+      file: db/migration/0002_insert_wallet.yaml

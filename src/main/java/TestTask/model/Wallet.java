@@ -1,4 +1,4 @@
-package TestTask.TestTask.model;
+package TestTask.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package TestTask.TestTask.dto;
+package TestTask.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
