@@ -7,7 +7,6 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 public class WalletBalanceResponse {
-
     private UUID walletId;
     private long balance;
 }
