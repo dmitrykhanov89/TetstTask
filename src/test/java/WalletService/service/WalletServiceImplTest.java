@@ -1,10 +1,10 @@
-package TestTask.service;
+package WalletService.service;
 
-import TestTask.dto.WalletOperationRequest;
-import TestTask.exception.InsufficientFundsException;
-import TestTask.exception.WalletNotFoundException;
-import TestTask.entity.Wallet;
-import TestTask.repository.WalletRepository;
+import WalletService.dto.WalletOperationRequest;
+import WalletService.exception.InsufficientFundsException;
+import WalletService.exception.WalletNotFoundException;
+import WalletService.entity.Wallet;
+import WalletService.repository.WalletRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
