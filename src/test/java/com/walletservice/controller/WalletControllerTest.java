@@ -1,9 +1,9 @@
-package WalletService.controller;
+package com.walletservice.controller;
 
-import WalletService.dto.WalletOperationRequest;
-import WalletService.exception.InsufficientFundsException;
-import WalletService.exception.WalletNotFoundException;
-import WalletService.service.WalletService;
+import com.walletservice.dto.WalletOperationRequest;
+import com.walletservice.exception.InsufficientFundsException;
+import com.walletservice.exception.WalletNotFoundException;
+import com.walletservice.service.WalletService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,11 @@
-package WalletService.service;
+package com.walletservice.service;
 
-import WalletService.dto.WalletOperationRequest;
-import WalletService.exception.InsufficientFundsException;
-import WalletService.exception.WalletNotFoundException;
-import WalletService.entity.Wallet;
-import WalletService.repository.WalletRepository;
-import jakarta.transaction.Transactional;
+import com.walletservice.dto.WalletOperationRequest;
+import com.walletservice.exception.InsufficientFundsException;
+import com.walletservice.exception.WalletNotFoundException;
+import com.walletservice.entity.Wallet;
+import com.walletservice.repository.WalletRepository;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.UUID;

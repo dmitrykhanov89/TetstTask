@@ -29,6 +29,49 @@
 - PostgreSQL
 - Liquibase
 - Docker / Docker Compose
-- JUnit 5
+- JUnit 5, Testcontainers
+
+---
+
+## Запуск
+
+```bash
+docker compose up --build
+```
+
+Приложение будет доступно по адресу `http://localhost:8080`.
+
+---
+
+## Конфигурация
+
+Все параметры задаются в файле `.env` и применяются без пересборки контейнеров:
+
+| Переменная             | Описание                        |
+|------------------------|---------------------------------|
+| `DB_NAME`              | Имя базы данных                 |
+| `DB_USER`              | Пользователь БД                 |
+| `DB_PASSWORD`          | Пароль БД                       |
+| `DB_PORT`              | Порт БД (хост)                  |
+| `DB_MAX_CONNECTIONS`   | max_connections PostgreSQL       |
+| `SERVER_PORT`          | Порт приложения                 |
+| `HIKARI_MAX_POOL_SIZE` | Размер пула соединений HikariCP |
+| `HIKARI_MIN_IDLE`      | Минимум idle соединений         |
+
+Значения по умолчанию находятся в `.env`. Для изменения достаточно отредактировать файл и перезапустить контейнеры:
+
+```bash
+docker compose up -d
+```
+
+---
+
+## Тесты
+
+```bash
+./gradlew test
+```
+
+Интеграционные тесты используют **Testcontainers** и автоматически поднимают PostgreSQL в контейнере.
 
 ---

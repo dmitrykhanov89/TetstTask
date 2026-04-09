@@ -1,12 +1,13 @@
-package WalletService.stress;
+package com.walletservice.stress;
 
-import WalletService.dto.WalletOperationRequest;
-import WalletService.entity.Wallet;
-import WalletService.repository.WalletRepository;
-import WalletService.service.WalletService;
+import com.walletservice.AbstractIntegrationTest;
+import com.walletservice.dto.WalletOperationRequest;
+import com.walletservice.entity.Wallet;
+import com.walletservice.repository.WalletRepository;
+import com.walletservice.service.WalletService;
+import com.walletservice.service.WalletServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -14,7 +15,7 @@ import java.util.concurrent.Executors;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Стресс-тест для проверки корректной работы {@link WalletService.service.WalletServiceImpl}
+ * Стресс-тест для проверки корректной работы {@link WalletServiceImpl}
  * в условиях высокой конкуренции.
  * <p>
  * Тест создаёт один кошелёк и выполняет множество параллельных операций пополнения
@@ -25,14 +26,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * <p>
  * Этот тест демонстрирует:
  * <ul>
- *     <li>Потокобезопасность метода {@link WalletService.service.WalletServiceImpl#processOperation}</li>
+ *     <li>Потокобезопасность метода {@link WalletServiceImpl#processOperation}</li>
  *     <li>Работу блокировок при одновременном доступе к одному кошельку</li>
  *     <li>Отсутствие потери данных при конкурентных операциях</li>
  * </ul>
  * </p>
  */
-@SpringBootTest
-class WalletConcurrencyTest {
+class WalletConcurrencyTest extends AbstractIntegrationTest {
 
     @Autowired
     private WalletService walletService;

@@ -1,4 +1,4 @@
-package WalletService.exception;
+package com.walletservice.exception;
 
 /**
  * Исключение, выбрасываемое при попытке списания средств с кошелька,

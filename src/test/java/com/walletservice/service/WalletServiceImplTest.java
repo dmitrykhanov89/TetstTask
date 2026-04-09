@@ -1,21 +1,20 @@
-package WalletService.service;
+package com.walletservice.service;
 
-import WalletService.dto.WalletOperationRequest;
-import WalletService.exception.InsufficientFundsException;
-import WalletService.exception.WalletNotFoundException;
-import WalletService.entity.Wallet;
-import WalletService.repository.WalletRepository;
+import com.walletservice.AbstractIntegrationTest;
+import com.walletservice.dto.WalletOperationRequest;
+import com.walletservice.exception.InsufficientFundsException;
+import com.walletservice.exception.WalletNotFoundException;
+import com.walletservice.entity.Wallet;
+import com.walletservice.repository.WalletRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import java.util.UUID;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-class WalletServiceImplTest {
+class WalletServiceImplTest extends AbstractIntegrationTest {
 
     @Autowired
     private WalletService walletService;
