@@ -1,7 +1,6 @@
 package TestTask.service;
 
 import TestTask.dto.WalletOperationRequest;
-
 import java.util.UUID;
 
 public interface WalletService {

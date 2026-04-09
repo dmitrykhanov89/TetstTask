@@ -3,7 +3,7 @@ package TestTask.service;
 import TestTask.dto.WalletOperationRequest;
 import TestTask.exception.InsufficientFundsException;
 import TestTask.exception.WalletNotFoundException;
-import TestTask.model.Wallet;
+import TestTask.entity.Wallet;
 import TestTask.repository.WalletRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
