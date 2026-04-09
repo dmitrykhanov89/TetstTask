@@ -1,4 +1,4 @@
-package TestTask.exception;
+package WalletService.exception;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -11,6 +11,20 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import java.time.LocalDateTime;
 
+/**
+ * Глобальный обработчик исключений для REST-контроллеров.
+ * <p>
+ * Преобразует исключения в стандартизированные HTTP-ответы с {@link ErrorResponse}.
+ * Обрабатывает:
+ * <ul>
+ *     <li>WalletNotFoundException → 404 Not Found</li>
+ *     <li>InsufficientFundsException → 409 Conflict</li>
+ *     <li>Некорректные запросы и валидацию → 400 Bad Request</li>
+ *     <li>Ошибки парсинга JSON → 400 Bad Request</li>
+ *     <li>Прочие ошибки → 500 Internal Server Error</li>
+ * </ul>
+ * </p>
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
