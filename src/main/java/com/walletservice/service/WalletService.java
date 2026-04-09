@@ -1,6 +1,6 @@
-package WalletService.service;
+package com.walletservice.service;
 
-import WalletService.dto.WalletOperationRequest;
+import com.walletservice.dto.WalletOperationRequest;
 import java.util.UUID;
 
 /**

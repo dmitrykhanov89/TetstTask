@@ -1,7 +1,9 @@
-package WalletService.exception;
+package com.walletservice.exception;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
+import org.springframework.dao.CannotAcquireLockException;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -63,6 +65,11 @@ public class GlobalExceptionHandler {
             message = "Invalid value for field '" + field + "'";
         }
         return buildResponse(HttpStatus.BAD_REQUEST, message);
+    }
+
+    @ExceptionHandler({PessimisticLockingFailureException.class, CannotAcquireLockException.class})
+    public ResponseEntity<ErrorResponse> handleLockFailure(Exception ex) {
+        return buildResponse(HttpStatus.CONFLICT, "Resource is busy, please retry");
     }
 
     @ExceptionHandler(Exception.class)

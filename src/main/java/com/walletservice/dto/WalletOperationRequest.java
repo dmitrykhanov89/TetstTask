@@ -1,4 +1,4 @@
-package WalletService.dto;
+package com.walletservice.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

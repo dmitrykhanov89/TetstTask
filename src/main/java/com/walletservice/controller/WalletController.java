@@ -1,8 +1,8 @@
-package WalletService.controller;
+package com.walletservice.controller;
 
-import WalletService.dto.WalletBalanceResponse;
-import WalletService.dto.WalletOperationRequest;
-import WalletService.service.WalletService;
+import com.walletservice.dto.WalletBalanceResponse;
+import com.walletservice.dto.WalletOperationRequest;
+import com.walletservice.service.WalletService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

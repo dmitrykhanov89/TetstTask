@@ -1,4 +1,4 @@
-package WalletService.entity;
+package com.walletservice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

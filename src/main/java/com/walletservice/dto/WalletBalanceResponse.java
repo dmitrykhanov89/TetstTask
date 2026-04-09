@@ -1,4 +1,4 @@
-package WalletService.dto;
+package com.walletservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
