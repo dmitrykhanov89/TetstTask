@@ -1,4 +1,4 @@
-package TestTask.model;
+package TestTask.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
